@@ -284,7 +284,7 @@ def create_github_project(
 
     # Find the project's repo
     project_split = project.split('/', 1)
-    org_name = project_split[0]
+    org_name  = "open-switch" #project_split[0]
     if len(project_split) > 1:
         repo_name = project_split[1]
     else:
