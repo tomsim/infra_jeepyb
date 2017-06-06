@@ -116,7 +116,7 @@ def main():
         # Handle errors in case the repo or the organization doesn't exists
         try:
             if len(project_split) > 1:
-                org = orgs_dict[project_split[0].lower()]
+                org = orgs_dict['open-switch']
                 repo = org.get_repo(project_split[1])
             else:
                 repo = ghub.get_user().get_repo(project)
@@ -135,6 +135,7 @@ def main():
                                        completed=True)
             issue.create_comment(pull_request_text % vars)
             req.edit(state="closed")
+
 
 if __name__ == "__main__":
     main()
